@@ -23,7 +23,7 @@ p {
 
 .slider {
     max-width: 640px;
-    margin: 40px auto 0;
+    margin: 30px auto 0;
     overflow: hidden;
     position: relative;
 }
@@ -41,8 +41,7 @@ p {
 
 .slide {
     min-width: 100%;
-    height: 500px;
-    background: #e42020;
+    height: 400px;
 }
 
 .slide img,
@@ -104,12 +103,44 @@ p {
 }
 
 .active {
-    background: #000;
+    background: red;
 }
-
-@media (max-width: 500px) {
+/* ============ Resposive for extra small devices ============= */
+@media (max-width: 575px) {
     body {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 0 10px;
     }
 
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        max-width: 320px;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    .slide {
+        height: 250px;
+    }
+
+    .prev,
+    .next {
+        font-size: 30px;
+    }
+
+    .dots {
+        bottom: -4px;
+    }
+
+    .dot {
+        width: 8px;
+        height: 8px;
+    }
 }

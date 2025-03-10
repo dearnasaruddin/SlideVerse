@@ -39,6 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    // Autoplay Funtion
+    setInterval(()=>{
+        updateSlider(currentSlide + 1)
+    },3000)
+
 
     // Button Click Events
     prevBtn.addEventListener('click', function () {
