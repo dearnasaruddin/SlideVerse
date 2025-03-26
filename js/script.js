@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // Selecting DOM Elements
+    let slider = document.querySelector(".slider")
     let slides = document.querySelector(".slides");
     let dotsContainer = document.querySelector(".dots");
     let prevBtn = document.querySelector(".prev");
@@ -40,10 +41,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     // Autoplay Funtion
-    setInterval(()=>{
+    let stop = setInterval(() => {
         updateSlider(currentSlide + 1)
-    },3000)
+    }, 2500)
 
+    slider.addEventListener("mouseover", () => {
+        clearInterval(stop)
+    })
+
+    slider.addEventListener("mouseout", () => {
+        stop = setInterval(() => {
+            updateSlider(currentSlide + 1)
+        }, 2500)
+    })
 
     // Button Click Events
     prevBtn.addEventListener('click', function () {
